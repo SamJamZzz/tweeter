@@ -1,0 +1,35 @@
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+textarea {
+  border: none;
+  background: none;
+  outline: none;
+  resize: none;
+  width: 1000px;
+  border-bottom: 2px solid black;
+}
+
+.tweetcontent {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.tweetbtn {
+  font-family: 'Bungee', cursive;
+  background-color: #4056A1;
+  color: white;
+}
+
+.counter {
+  font-family: 'Bungee', cursive;
+}
