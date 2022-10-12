@@ -46,7 +46,7 @@ const loadTweets = function() {
     method: 'GET'
   })
   .then((tweets) => {
-    renderTweets(tweets);
+    renderTweets(tweets.reverse());
   })
   .catch((err) => {
     console.log(err);
@@ -80,9 +80,11 @@ $(document).ready(function() {
       method: 'POST',
       data: tweetData
     })
-    .then()
-    .catch((err) => {
-      console.log(err);
+    .then(tweet =>  {
+      $(".posts").prepend(createTweetElement(tweet));
+      $(".posts").empty();
+      loadTweets();
     })
+    .catch(err => console.log(err));
   });
 });
