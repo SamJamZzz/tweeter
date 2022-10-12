@@ -8,6 +8,7 @@
   width: 1000px;
   border-style: solid;
   transition-duration: 0.4s;
+  margin-bottom: 30px;
 }
 
 .post:hover {

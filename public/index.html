@@ -44,6 +44,8 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
+      <!-- New tweets from user composed here -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
@@ -55,29 +57,9 @@
           </div>
         </form>
       </section>
-      <section class="posts">
-        <article class="post">
-          <header class="post-top">
-            <div class="post-top-left">
-              <img src="/images/profile-sample.png" class="poster-pic">
-              <span>Sam</span>
-            </div>
-            <span class="poster-id">@SamJam</span>
-          </header>
-          <p class="post-text">Chainsaw Man is now airing!</p>
-          <hr class="post-divider">
-          <footer class="post-bottom">
-            <p class="time-since">10 days ago</p>
-            <div class="post-bottom-right">
-              <form class="post-buttons" action="">
-                <button class="button"><i class="fa-solid fa-flag"></i></button>
-                <button class="button"><i class="fa-solid fa-retweet"></i></button>
-                <button class="button"><i class="fa-solid fa-heart"></i></button>
-              </form>
-            </div>
-          </footer>
-        </article>
-      </section>
+      
+      <!-- Posted tweets dynamically added here -->
+      <section class="posts"></section>
     </main>
   </body>
 </html>
