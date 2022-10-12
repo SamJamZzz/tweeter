@@ -1,0 +1,91 @@
+.posts {
+  margin-top: 100px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  border-style: solid;
+  transition-duration: 0.4s;
+}
+
+.post:hover {
+  box-shadow: 4px 4px 4px black;
+}
+
+.post-top {
+  width: 100%;
+  height: auto;
+  background-color: #f4f1ec;
+  background-image: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.post-top-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+img.poster-pic {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 30px;
+  height: 100px;
+  width: 100px;
+}
+
+.poster-id {
+  margin-top: 10px;
+  margin-right: 30px;
+  font-weight: bold;
+  opacity: 50%;
+}
+
+.post-text {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.post-divider {
+  width: 98%;
+  border: 2px solid black;
+}
+
+.post-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.time-since {
+  margin-left: 30px;
+}
+
+.post-buttons {
+  margin-right: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  border: none;
+  background: none;
+  background-color: none;
+}
+
+.fa-solid {
+  transition-duration: 0.4s;
+}
+
+.fa-solid:hover {
+  color: rgb(0, 98, 255);
+}

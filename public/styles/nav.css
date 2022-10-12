@@ -13,7 +13,13 @@ nav {
   font-size: 40px;
  }
 
- .navcontent {
+ .nav-right {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+ }
+
+ .nav-link {
   font-family: 'Source Sans Pro';
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 30px;
@@ -22,10 +28,4 @@ nav {
 
  .bold {
   font-weight: bold;
- }
-
- .post {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
  }

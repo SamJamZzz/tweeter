@@ -18,7 +18,7 @@ textarea {
   border-bottom: 2px solid black;
 }
 
-.tweetcontent {
+.new-tweet-bottom {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;

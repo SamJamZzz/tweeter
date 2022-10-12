@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css">
     <link rel="stylesheet" href="/styles/header.css" type="text/css">
     <link rel="stylesheet" href="/styles/form.css" type="text/css">
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- External JS -->
@@ -30,20 +31,15 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <div class="post">
-        <p class="navcontent"><span class="bold">Write</span> a new tweet</p>
+      <div class="nav-right">
+        <p class="nav-link"><span class="bold">Write</span> a new tweet</p>
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
 
-    <header>
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2>Your Name</h2>
-      </div>
+    <header class="profile-top">
+      <img src ="/images/profile-hex.png">
+      <h2>Your Name</h2>
     </header>
 
     <!-- Page-specific (main) content here -->
@@ -53,11 +49,34 @@
         <form method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <div class="tweetcontent">
+          <div class="new-tweet-bottom">
             <button type="submit" class="tweetbtn">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+      <section class="posts">
+        <article class="post">
+          <header class="post-top">
+            <div class="post-top-left">
+              <img src="/images/profile-sample.png" class="poster-pic">
+              <span>Sam</span>
+            </div>
+            <span class="poster-id">@SamJam</span>
+          </header>
+          <p class="post-text">Chainsaw Man is now airing!</p>
+          <hr class="post-divider">
+          <footer class="post-bottom">
+            <p class="time-since">10 days ago</p>
+            <div class="post-bottom-right">
+              <form class="post-buttons" action="">
+                <button class="button"><i class="fa-solid fa-flag"></i></button>
+                <button class="button"><i class="fa-solid fa-retweet"></i></button>
+                <button class="button"><i class="fa-solid fa-heart"></i></button>
+              </form>
+            </div>
+          </footer>
+        </article>
       </section>
     </main>
   </body>
