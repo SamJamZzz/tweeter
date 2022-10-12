@@ -39,6 +39,7 @@ const renderTweets = function(tweets) {
   });
 };
 
+// Send ajax GET request to load tweets
 const loadTweets = function() {
   $.ajax({
     url: '/tweets',
@@ -57,8 +58,18 @@ $(document).ready(function() {
 
   // Listens to form submission for new tweet
   const $form = $('.submit-tweet');
+
   $form.on('submit', function(event) {
     event.preventDefault();
+
+    // Obtain tweet length
+    let tweetLength = $(this).find('textarea').val().length;
+    if (!tweetLength) {
+      return alert('You must enter a non-empty tweet!');
+    }
+    if (tweetLength > 140) {
+      return alert('You are over the character limit!');
+    }
 
     // Turns form data into query string
     const tweetData = $form.serialize();
@@ -68,6 +79,10 @@ $(document).ready(function() {
       url: '/tweets',
       method: 'POST',
       data: tweetData
-    });
+    })
+    .then()
+    .catch((err) => {
+      console.log(err);
+    })
   });
 });
