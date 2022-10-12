@@ -4,31 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
 // Create new tweet containing entire HTML structure
 const createTweetElement = function(tweet) {
   let $tweet = $(`
@@ -43,7 +18,7 @@ const createTweetElement = function(tweet) {
     <p class="post-text">${tweet.content.text}</p>
     <hr class="post-divider">
     <footer class="post-bottom">
-      <p class="time-since">${tweet.created_at} days ago</p>
+      <p class="time-since">${timeago.format(tweet.created_at)}</p>
       <div class="post-bottom-right">
         <form class="post-buttons" action="">
           <button class="button"><i class="fa-solid fa-flag"></i></button>
@@ -62,10 +37,23 @@ const renderTweets = function(tweets) {
   tweets.forEach(tweet => {
     $(".posts").append(createTweetElement(tweet));
   });
-}
+};
+
+const loadTweets = function() {
+  $.ajax({
+    url: '/tweets',
+    method: 'GET'
+  })
+  .then((tweets) => {
+    renderTweets(tweets);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+};
 
 $(document).ready(function() {
-  renderTweets(data);
+  loadTweets();
 
   // Listens to form submission for new tweet
   const $form = $('.submit-tweet');
