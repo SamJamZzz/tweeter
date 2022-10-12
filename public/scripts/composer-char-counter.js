@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $(".new-tweet").on("keyup", "textarea", function() {
     let length = $(this).val().length; // Measures length of text within textarea element
-    let $counter = $(this).siblings("div.tweetcontent").children(".counter"); // Target the character count
+    let $counter = $(this).siblings("div.new-tweet-bottom").children(".counter"); // Target the character count
     let countLength = 140 - length;
     $counter.val(countLength); // Set and update character count as text is entered
 
