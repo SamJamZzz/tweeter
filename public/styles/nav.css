@@ -31,6 +31,12 @@ nav {
   font-weight: bold;
  }
 
+ .compose-btn {
+  border: none;
+  background: none;
+  background-color: none;
+}
+
  .fa-angles-down {
   animation: MoveUpDown 1s linear infinite;
   position: absolute;

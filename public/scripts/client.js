@@ -63,34 +63,41 @@ const loadTweets = function() {
 };
 
 $(document).ready(function() {
+  // Loads pre-existing tweets and hides error div
   loadTweets();
+  $('.error').hide();
+
+  $('.compose-btn').on('click', function() {
+    $('html, body').animate({
+      scrollTop: $(".new-tweet").offset().top - 400
+    }, 1000);
+    $('textarea').focus();
+  })
 
   // Listens to form submission for new tweet
-  const $form = $('.submit-tweet');
-
-  $form.on('submit', function(event) {
+  $('.submit-tweet').on('submit', function(event) {
+    $('.error').slideToggle();
     event.preventDefault();
 
     // Obtain tweet length
     let tweetLength = $(this).find('textarea').val().length;
-    
-    // Slides error message up if it is displayed
-    $('.error').slideUp('slow');
 
     // Slides appropriate error message down if given an invalid tweet
     if (!tweetLength) {
+      $('.error').slideDown('slow')
       $('.error-message').text('No empty tweets allowed');
-      $('.error').slideDown('slow');
       return false;
     }
     if (tweetLength > 140) {
+      $('.error').slideDown('slow')
       $('.error-message').text('Character limit of 140 exceeded!');
-      $('.error').slideDown('slow');
       return false;
     }
 
+    $('.error').hide();
+
     // Turns form data into query string
-    const tweetData = $form.serialize();
+    const tweetData = $('.submit-tweet').serialize();
 
     // Sends serialized data to server
     $.ajax({
@@ -104,6 +111,7 @@ $(document).ready(function() {
       $(".posts").prepend(createTweetElement(tweet));
       $(".posts").empty();
       loadTweets();
+      $('.submit-tweet').find('textarea').val(''); 
     })
     .catch(err => console.log(err));
   });
