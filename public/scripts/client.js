@@ -6,6 +6,15 @@
 
 // Create new tweet containing entire HTML structure
 const createTweetElement = function(tweet) {
+
+  // Escape function to avoid XSS
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  
+  // HTML structure for tweet post
   let $tweet = $(`
     <article class="post">
     <header class="post-top">
@@ -15,7 +24,7 @@ const createTweetElement = function(tweet) {
       </div>
       <span class="poster-id">${tweet.user.handle}</span>
     </header>
-    <p class="post-text">${tweet.content.text}</p>
+    <p class="post-text">${escape(tweet.content.text)}</p>
     <hr class="post-divider">
     <footer class="post-bottom">
       <p class="time-since">${timeago.format(tweet.created_at)}</p>
