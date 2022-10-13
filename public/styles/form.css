@@ -3,6 +3,20 @@ h2 {
   justify-content: center;
 }
 
+.error {
+  color: red;
+  border: 5px solid red;
+  margin-top: 5px;
+}
+
+.fa-triangle-exclamation {
+  margin-left: 15px;
+}
+
+.error-message {
+  margin-left: 15px;
+}
+
 form {
   display: flex;
   flex-direction: column;

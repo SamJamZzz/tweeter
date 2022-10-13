@@ -17,6 +17,7 @@ nav {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 50px;
  }
 
  .nav-link {
@@ -29,3 +30,18 @@ nav {
  .bold {
   font-weight: bold;
  }
+
+ .fa-angles-down {
+  animation: MoveUpDown 1s linear infinite;
+  position: absolute;
+  color: red;
+ }
+
+ @keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 5px;
+  }
+  50% {
+    bottom: 30px;
+  }
+}

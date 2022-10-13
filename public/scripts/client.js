@@ -73,11 +73,20 @@ $(document).ready(function() {
 
     // Obtain tweet length
     let tweetLength = $(this).find('textarea').val().length;
+    
+    // Slides error message up if it is displayed
+    $('.error').slideUp('slow');
+
+    // Slides appropriate error message down if given an invalid tweet
     if (!tweetLength) {
-      return alert('You must enter a non-empty tweet!');
+      $('.error-message').text('No empty tweets allowed');
+      $('.error').slideDown('slow');
+      return false;
     }
     if (tweetLength > 140) {
-      return alert('You are over the character limit!');
+      $('.error-message').text('Character limit of 140 exceeded!');
+      $('.error').slideDown('slow');
+      return false;
     }
 
     // Turns form data into query string
@@ -89,6 +98,8 @@ $(document).ready(function() {
       method: 'POST',
       data: tweetData
     })
+
+    // Adds tweet to container
     .then(tweet =>  {
       $(".posts").prepend(createTweetElement(tweet));
       $(".posts").empty();
