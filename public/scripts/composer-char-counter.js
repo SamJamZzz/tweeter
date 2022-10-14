@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $(".new-tweet").on("keyup", "textarea", function() {
+  $(".new-tweet").on("input", "textarea", function() {
     let length = $(this).val().length; // Measures length of text within textarea element
     let $counter = $(this).siblings("div.new-tweet-bottom").children(".counter"); // Target the character count
     let countLength = 140 - length;
@@ -12,5 +12,10 @@ $(document).ready(function() {
     if (countLength < 0) {
       $counter.css({ 'color': 'red'});
     }
-  })
+
+    // Reset character count after form is submitted
+    $('.submit-tweet').on('submit', function() {
+      $counter.val(140);
+    });
+  });
 });

@@ -67,6 +67,7 @@ $(document).ready(function() {
   loadTweets();
   $('.error').hide();
 
+  // Scrolls to textarea and focuses when compose button in nav is clicked
   $('.compose-btn').on('click', function() {
     $('html, body').animate({
       scrollTop: $(".new-tweet").offset().top - 400
@@ -94,6 +95,7 @@ $(document).ready(function() {
       return false;
     }
 
+    // Hide error div for successful form submission
     $('.error').hide();
 
     // Turns form data into query string
