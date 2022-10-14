@@ -16,3 +16,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Final Product
+
+### Tweeter Profile and Compose Post Sections
+![Tweeter Profile and Compose Post Sections](https://github.com/SamJamZzz/tweeter/blob/master/docs/tweet-profile-compose.png)
+
+### Tweet Posts Section
+![Tweet Posts Section](https://github.com/SamJamZzz/tweeter/blob/master/docs/tweet-posts.png)
