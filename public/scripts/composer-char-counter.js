@@ -12,10 +12,5 @@ $(document).ready(function() {
     if (countLength < 0) {
       $counter.css({ 'color': 'red'});
     }
-
-    // Reset character count after form is submitted
-    $('.submit-tweet').on('submit', function() {
-      $counter.val(140);
-    });
   });
 });

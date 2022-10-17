@@ -98,6 +98,9 @@ $(document).ready(function() {
     // Hide error div for successful form submission
     $('.error').hide();
 
+    // Reset character count after form is submitted
+    $('.counter').val(140);
+
     // Turns form data into query string
     const tweetData = $('.submit-tweet').serialize();
 
