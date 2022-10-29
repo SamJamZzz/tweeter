@@ -50,11 +50,9 @@ const renderTweets = function(tweets) {
 
 // Send ajax GET request to load tweets
 const loadTweets = function() {
-  $.ajax({
-    url: '/tweets',
-    method: 'GET'
-  })
+  $.get('/tweets')
   .then((tweets) => {
+    $(".posts").empty();
     renderTweets(tweets.reverse());
   })
   .catch((err) => {
@@ -112,9 +110,7 @@ $(document).ready(function() {
     })
 
     // Adds tweet to container
-    .then(tweet =>  {
-      $(".posts").prepend(createTweetElement(tweet));
-      $(".posts").empty();
+    .then(() =>  {
       loadTweets();
       $('.submit-tweet').find('textarea').val(''); 
     })
